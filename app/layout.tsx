@@ -32,9 +32,7 @@ export default function RootLayout({
           <div className="wrapper">
             {/* logo */}
             <nav>
-              <a href="#">Test</a>
-              <a href="#">Of The</a>
-              <a href="#">Header</a>
+              <a href="#">О ПЦК</a>
             </nav>
           </div>
         </header>

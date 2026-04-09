@@ -1,5 +1,5 @@
 export default function Home() {
   return (
-    <section><div>text</div></section>
+    <section className="aboutpzk"></section>
   );
 }
