@@ -25,27 +25,32 @@ export default function RootLayout({
   return (
     <html
       lang="ru"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">
-        <header className="header">
-          <div className="wrapper">
-            {/* logo */}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+      <body>
+        <div className="wrapper">
+          <header className="header">
             <nav>
               <a href="#">О ПЦК</a>
+              <a href="#">ПРЕПОДАВАТЕЛИ</a>
+              <a href="#">ДИСЦИПЛИНЫ</a>
+              <a href="#">УМР</a>
+              <a href="#">НИРС</a>
+              <a href="#">ВНЕАУДИТОРНАЯ РАБОТА</a>
+              <a href="#">НОВОСТИ</a>
+              <a href="#">СТУДЕНТАМ</a>
             </nav>
-          </div>
-        </header>
+          </header>
 
-        <main className="main">
-          <div className="wrapper">{children}</div>
-        </main>
+          <main className="main">
+            <div className="wrapper">{children}</div>
+          </main>
 
-        <footer className="footer">
-          <div className="wrapper">
-            <p>&copy; {new Date().getFullYear()} ПЦК ТПП и ЕД. Все права защищены.</p>
-          </div>
-        </footer>
+          <footer className="footer">
+            <div className="wrapper">
+              <p>&copy; {new Date().getFullYear()} ПЦК ТПП и ЕД. Все права защищены.</p>
+            </div>
+          </footer>
+        </div>
       </body>
     </html>
   );

@@ -1,5 +1,9 @@
 export default function Home() {
   return (
-    <section className="aboutpzk"></section>
+    <div className="wrapper">
+      <section className="aboutpzk">
+        
+      </section>
+    </div>
   );
 }
