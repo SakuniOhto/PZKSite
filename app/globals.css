@@ -1,14 +1,14 @@
 /* Обнуление */
 * {
-  padding: 0px;
-  margin: 0px;
-  border: none;
+    padding: 0rem;
+    margin: 0rem;
+    border: none;
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /* Links */
@@ -16,11 +16,11 @@
 a,
 a:link,
 a:visited {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 a:hover {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 /* Common */
@@ -31,7 +31,7 @@ footer,
 header,
 section,
 main {
-  display: block;
+    display: block;
 }
 
 h1,
@@ -41,27 +41,27 @@ h4,
 h5,
 h6,
 p {
-  font-size: inherit;
-  font-weight: inherit;
+    font-size: inherit;
+    font-weight: inherit;
 }
 
 ul,
 ul li {
-  list-style: none;
+    list-style: none;
 }
 
 img {
-  vertical-align: top;
+    vertical-align: top;
 }
 
 img,
 svg {
-  max-width: 100%;
-  height: auto;
+    max-width: 100%;
+    height: auto;
 }
 
 address {
-  font-style: normal;
+    font-style: normal;
 }
 
 /* Form */
@@ -70,108 +70,1232 @@ input,
 textarea,
 button,
 select {
-  font-family: inherit;
-  font-size: inherit;
-  color: inherit;
-  background-color: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: transparent;
 }
 
 input::-ms-clear {
-  display: none;
+    display: none;
 }
 
 textarea {
-  resize: vertical;
+    resize: vertical;
 }
 
 button,
 input[type="submit"] {
-  display: inline-block;
-  box-shadow: none;
-  background-color: transparent;
-  background: none;
-  cursor: pointer;
+    display: inline-block;
+    box-shadow: none;
+    background-color: transparent;
+    background: none;
+    cursor: pointer;
 }
 
 button::-moz-focus-inner {
-  padding: 0;
-  border: 0;
+    padding: 0;
+    border: 0;
 }
 
 label {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 legend {
-  display: block;
+    display: block;
 }
 
 input[type='file'] {
-  max-width: 100%;
+    max-width: 100%;
+}
+
+body {
+    overflow-x: hidden;
 }
 
 /* Подключение шрифтов */
 @font-face {
-  font-family: 'Montserrat';
-  src: url('fonts/Montserrat-Regular.ttf');
-  font-weight: 400;
+    font-family: 'Montserrat';
+    src: url('fonts/Montserrat-Regular.ttf');
+    font-weight: 400;
 }
 
 @font-face {
-  font-family: 'Montserrat';
-  src: url('fonts/Montserrat-Medium.ttf');
-  font-weight: 500;
+    font-family: 'Montserrat';
+    src: url('fonts/Montserrat-Medium.ttf');
+    font-weight: 500;
 }
 
 @font-face {
-  font-family: 'Montserrat';
-  src: url('fonts/Montserrat-SemiBold.ttf');
-  font-weight: 600;
+    font-family: 'Montserrat';
+    src: url('fonts/Montserrat-SemiBold.ttf');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'SSP';
+    src: url('fonts/SourceSerifPro-Regular.ttf');
+    font-weight: 400;
 }
 
 /* Основная часть */
+
+/* База */
 .wrapper {
-  max-width: 1280px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    max-width: 80rem;
+    margin: 0 auto;
 }
 
-nav a {
-  color: #ffff;
-  font-family: "Montserrat";
-  font-style: Regular;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.25rem;
-  letter-spacing: 0%;
-  text-align: left;
+.medium-20px {
+    font-family: "Montserrat";
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+    letter-spacing: 0%;
 }
+
+.regular-16px,
+nav a {
+    color: #ffff;
+    font-family: "Montserrat";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    letter-spacing: 0%;
+}
+
+h3 {
+    color: rgba(0, 0, 0, 1);
+    font-family: "Montserrat";
+    font-size: 2.25rem;
+    font-weight: 600;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.liquid-glass {
+    -webkit-backdrop-filter: blur(.3125rem);
+    backdrop-filter: blur(.3125rem);
+    box-shadow: 0 .25rem 1.875rem rgba(0, 0, 0, 0.1);
+    border: .0625rem solid rgba(255, 255, 255, 0.35);
+    transform: translateZ(0);
+    will-change: backdrop-filter;
+}
+
+/* ХЕДЕР */
 
 nav {
-  padding: 0 2rem;
-  height: 2.8125rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.875rem;
+    padding: 0 2rem;
+    height: 2.8125rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.875rem;
 }
 
 header {
-  position: absolute;
-  z-index: 1000;
-  top: 1.25rem;
-  box-sizing: border-box;
-  border: .0625rem solid rgba(255, 255, 255, 0.35);
-  border-radius: 1.25rem;
-  background: rgba(60, 101, 93, 0.4);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 1.25rem;
+    margin: 0 1.25rem;
+    z-index: 1000;
+    box-sizing: border-box;
+    border-radius: 1.25rem;
+    background: rgba(60, 101, 93, 0.35);
 }
 
+/* Блок О ПЦК */
+
 .aboutpzk {
-  position: relative;
-  background-image: url('imgs/Фон 1 блок.png');
-  min-height: 30rem;
-  width: 100%;
-  background-size: cover;
-  background-position: center;
+    background-image: url('../public/background\ 1.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 30rem;
 }
+
+.aboutpzk.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.aboutpzk h1 {
+    padding-top: 6.875rem;
+    color: rgba(236, 214, 153, 1);
+    font-family: "SSP";
+    font-size: 3rem;
+    line-height: 3.75rem;
+    letter-spacing: 0%;
+    text-align: left;
+    z-index: 4;
+    position: relative;
+}
+
+.aboutpzk h2 {
+    padding-top: 4.375rem;
+    color: #ffff;
+    font-family: "Montserrat";
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 1.25rem;
+    letter-spacing: 0%;
+}
+
+.aboutpzk .left-text p {
+    padding-top: 1.25rem;
+    width: 23.25rem;
+}
+
+.aboutpzk .row {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 21.3125rem;
+    position: relative;
+}
+
+.aboutpzk .row .right-text p {
+    width: 23.25rem;
+    height: 6.1875rem;
+}
+
+.quote {
+    position: relative;
+    z-index: 1;
+    padding-left: 4.0625rem;
+    width: 28.625rem;
+    height: 11.1875rem;
+    background: rgba(60, 101, 93, 0.4);
+    border-radius: 1.25rem;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    margin-top: 4.375rem;
+}
+
+.cards-group {
+    position: absolute;
+    left: 50%;
+    top: 13.2075rem;
+    width: 12.125rem;
+    height: 15rem;
+}
+
+.chairman-photo {
+    background-image: url('../public/Председатель\ ПЦК.png');
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(67, 114, 106, 1);
+    position: absolute;
+    transform: translateX(-50%);
+    z-index: 3;
+    left: 0;
+    top: 0;
+    width: 12.125rem;
+    height: 15rem;
+    border-radius: 1.5625rem;
+}
+
+.fake-rectangle-photo {
+    position: absolute;
+    z-index: 2;
+    top: 6%;
+    left: 3.5%;
+    width: 12.3287rem;
+    height: 14.8462rem;
+    transform: rotate(8.70deg) translateX(-50%);
+    box-sizing: border-box;
+    border: .0625rem solid rgba(255, 255, 255, 0.4);
+    border-radius: 1.5625rem;
+    background: rgba(150, 192, 190, 1);
+}
+
+.fake-rectangle-photo-2 {
+    position: absolute;
+    z-index: 1;
+    left: -10%;
+    top: 8.5%;
+    width: 7.9387rem;
+    height: 14.3912rem;
+    transform: rotate(15.77deg);
+    box-sizing: border-box;
+    border: .0625rem solid rgba(255, 255, 255, 0.4);
+    border-radius: 1.5625rem;
+    background: rgba(150, 192, 190, 1);
+}
+
+.sphere {
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    top: 17rem;
+    transform: translate(-50%, -50%);
+    width: 34.375rem;
+    height: 34.375rem;
+    border-radius: 50%;
+    background: linear-gradient(180.00deg, rgba(44, 91, 85, 0) 61.181%, rgba(44, 91, 85, 0.99) 80.169%, rgba(44, 91, 85, 1) 100%);
+    clip-path: inset(10% 0 0 0);
+}
+
+/* ПРЕПОДАВАТЕЛИ */
+
+.teachers h3 {
+    padding-top: 3.375rem;
+}
+
+.teachers .row {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    position: relative;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: .6875rem;
+}
+
+.button-back,
+.button-forward {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: rgba(196, 196, 196, 1);
+    border-radius: 90;
+    display: flex;
+    justify-content: center;
+    padding-left: .8125rem;
+    padding-right: .9375rem
+}
+
+.button-forward {
+    transform: rotate(180deg);
+    background: rgba(250, 171, 114, 1);
+}
+
+.button-back.disabled,
+.button-forward.disabled {
+    pointer-events: none;
+}
+
+.button-back.swapped {
+    background: rgba(250, 171, 114, 1);
+}
+
+.button-forward.swapped {
+    background: rgba(196, 196, 196, 1);
+    transform: rotate(180deg);
+}
+
+.teacher-cards {
+    width: 100%;
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 2.5rem;
+    column-gap: 3.4375rem;
+    animation: slideInTeachers 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes slideInTeachers {
+    from {
+        opacity: 0;
+        transform: translateX(1.875rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.teacher-cards .card {
+    flex: none;
+    width: 18.75rem;
+    height: 21.8981rem;
+    border-radius: 1.875rem;
+    box-shadow: -0.25rem .25rem 1.1875rem 0rem rgba(0, 0, 0, 0.06);
+    background: rgba(255, 255, 255, 0.5);
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.teacher-cards .card .row img {
+    width: 6.5rem;
+    height: 7.5081rem;
+    border-radius: 1.25rem;
+    padding: 1.25rem 0 0 1.25rem;
+}
+
+.teacher-cards .row {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+
+.teacher-cards h1 {
+    color: rgba(0, 0, 0, 1);
+    font-family: "Montserrat";
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+    letter-spacing: 0%;
+    text-align: left;
+    padding-top: .9375rem;
+    flex: 1;
+}
+
+.teacher-cards .p {
+    padding-left: 1.25rem;
+    margin-top: .9375rem;
+    color: rgba(0, 0, 0, 1);
+    font-family: "Montserrat";
+    font-size: .75rem;
+    font-weight: 400;
+    line-height: .9375rem;
+    letter-spacing: 0%;
+    text-align: left;
+    padding-right: 1rem
+}
+
+.corner-button {
+    width: 3.75rem;
+    height: 3.75rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 100% 0 0 0;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+
+    /* base background */
+    background: linear-gradient(180deg, rgba(212, 212, 212, 1) 21.63%, rgba(212, 212, 212, 0.6) 67.55%);
+
+    /* hover transition only via ::before */
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.corner-button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+
+    /* hover overlay background (default variant) */
+    background: linear-gradient(180deg, rgba(212, 212, 212, 1) 21.63%, rgba(212, 212, 212, 0.6) 67.55%);
+
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 0;
+}
+
+/* default hover for ALL corner buttons */
+.corner-button:hover::before {
+    opacity: 1;
+}
+
+.corner-button>* {
+    position: relative;
+    z-index: 1;
+}
+
+.teacher-cards>div.first-page-card:nth-child(1) .corner-button,
+.teacher-cards>div.first-page-card:nth-child(3) .corner-button {
+    background: linear-gradient(180deg, rgba(246, 193, 153, 1) 0.37%, rgba(246, 193, 153, 0.4) 67.55%);
+}
+
+.teacher-cards>div.first-page-card:nth-child(1) .corner-button::before,
+.teacher-cards>div.first-page-card:nth-child(3) .corner-button::before {
+    background: linear-gradient(180deg, rgba(246, 193, 153, 1) 0.37%, rgba(246, 193, 153, 0.6) 100%);
+}
+
+.teacher-cards>div.first-page-card:nth-child(1) .corner-button:hover::before,
+.teacher-cards>div.first-page-card:nth-child(3) .corner-button:hover::before {
+    opacity: 1;
+}
+
+.teacher-cards>div.first-page-card:nth-child(2) .corner-button {
+    background: linear-gradient(180deg, rgba(45, 92, 86, 1) 0.37%, rgba(45, 92, 86, 0.4) 67.55%);
+}
+
+.teacher-cards>div.first-page-card:nth-child(2) .corner-button::before {
+    background: linear-gradient(180deg, rgba(45, 92, 86, 1) 0.37%, rgba(45, 92, 86, 0.6) 100%);
+}
+
+.teacher-cards>div.first-page-card:nth-child(2) .corner-button:hover::before {
+    opacity: 1;
+}
+
+.corner-button img {
+    margin-left: .875rem;
+    margin-top: .75rem;
+    transform: rotate(180deg);
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.teacher-cards span {
+    font-family: 'Montserrat';
+    font-weight: 500;
+}
+
+.teacher-card-blur-bg {
+    position: absolute;
+    width: 18.75rem;
+    height: 21.8981rem;
+    border-radius: .6875rem;
+    filter: blur(4.625rem);
+    background: radial-gradient(105.76% 124.84% at 37% 55%, rgba(250, 171, 114, 1), rgba(250, 171, 114, 0));
+    margin-left: 2rem;
+    margin-top: 1.6875rem;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.teacher-cards .card-green {
+    border-radius: 1.875rem;
+    box-shadow: -0.25rem .25rem 1.1875rem 0rem rgba(0, 0, 0, 0.06);
+    background: conic-gradient(from 87.4deg at 50% 50%, rgba(45, 92, 86, 1) -43.2deg, rgba(56, 104, 104, 0.98) 0deg, rgba(45, 92, 86, 0.98) 316.8deg, rgba(56, 104, 104, 0.98) 360deg);
+}
+
+.card-green .row h1,
+.card-green .p {
+    color: white;
+}
+
+.teacher-card-blur-bg-green {
+    position: absolute;
+    width: 18.75rem;
+    height: 21.8981rem;
+    border-radius: .6875rem;
+    filter: blur(4.625rem);
+    background: radial-gradient(105.76% 124.84% at 37% 55%, rgba(53, 101, 100, 1), rgba(45, 92, 86, 0));
+    margin-left: -1.875rem;
+    margin-top: -1.3125rem;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* ДИСЦИПЛИНЫ */
+
+.disciplines .row {
+    padding-top: 7.1875rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.disciplines .row-2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3.75rem;
+}
+
+.disciplines .row-2 h4 {
+    font-family: "Montserrat";
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.8125rem;
+    letter-spacing: 0rem;
+    text-align: left;
+}
+
+.disciplines {
+    position: relative;
+}
+
+.background {
+    position: absolute;
+    top: 15rem;
+    background-image: url('../public/background\ 2.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 30rem;
+}
+
+.disciplines .card p {
+    margin-top: .625rem;
+    font-size: .875rem;
+}
+
+.disciplines .card .medium-20px {
+    margin-top: .9375rem;
+    color: #ffff;
+}
+
+.disciplines .card {
+    width: 25.6875rem;
+    height: 13.75rem;
+    border-radius: 1.875rem;
+    box-shadow: -0.25rem .25rem 2.1875rem 0rem rgba(0, 0, 0, 0.25);
+    background: rgba(44, 79, 78, 0.35);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+
+    transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.disciplines .card:hover {
+    transform: translateY(-0.375rem);
+}
+
+.disciplines .card img {
+    width: 5rem;
+    height: 5rem;
+}
+
+.disciplines .row-cards {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3.75rem;
+    margin-top: 2.1875rem;
+    margin-bottom: 3.75rem;
+    position: relative;
+}
+
+.disciplines .row-cards:last-of-type {
+    margin-bottom: 0;
+}
+
+.disciplines .row-cards:first-of-type::after {
+    content: "";
+    position: absolute;
+    width: 25.6875rem;
+    height: 13.75rem;
+    right: -12.5rem;
+    top: -2.3125rem;
+    border-radius: 1.875rem;
+    pointer-events: none;
+    z-index: 0;
+    background: rgba(250, 171, 114, 0.5);
+    filter: blur(5rem);
+    transition: transform 450ms cubic-bezier(0.22, 1, 0.36, 1);
+    transform: translate(0, 0);
+}
+
+.disciplines .cards.active-1-1 .row-cards:first-of-type::after {
+    transform: translate(-67.6875rem, 2.3125rem);
+    filter: blur(4.375rem);
+    opacity: 0.6;
+}
+
+.disciplines .cards.active-1-2 .row-cards:first-of-type::after {
+    transform: translate(-39.6875rem, 2.3125rem);
+    filter: blur(4.375rem);
+    opacity: 0.6;
+}
+
+.disciplines .cards.active-1-3 .row-cards:first-of-type::after {
+    transform: translate(-11.6875rem, 2.3125rem);
+    filter: blur(4.375rem);
+    opacity: 0.6;
+}
+
+.disciplines .cards.active-2-2 .row-cards:first-of-type::after {
+    transform: translate(-39.6875rem, 19.8125rem);
+    filter: blur(4.375rem);
+    opacity: 0.6;
+}
+
+.disciplines .title-cards {
+    margin-top: 3.3125rem;
+}
+
+.disciplines .title-card {
+    border-radius: 1.25rem;
+    background: rgba(44, 79, 78, 0.2);
+    width: 18.75rem;
+    height: 8.75rem;
+    grid-row: 1 / span 1;
+    grid-column: 3 / span 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.disciplines .title-card:hover {
+    transform: translateY(-0.375rem);
+}
+
+.disciplines .title-card p {
+    width: 14.0625rem;
+    color: #ffff;
+    font-family: "Montserrat";
+    font-size: .875rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+.disciplines .first-title-cards,
+.disciplines .second-title-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.6875rem;
+    margin-bottom: 1.25rem;
+}
+
+.disciplines .info-block {
+    position: relative;
+    z-index: 2;
+    margin-top: 2.8125rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: .625rem;
+    padding: .375rem 1.0625rem .375rem 1.0625rem;
+    border-radius: .9375rem;
+    background: rgba(250, 171, 114, 0.2);
+    text-align: center;
+    padding: .9688rem 1.3125rem .9688rem 1.3125rem;
+    transition: transform 450ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.disciplines .info-block p {
+    color: rgba(255, 255, 255, 1);
+    font-family: "Montserrat";
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.0625rem;
+    letter-spacing: 0rem;
+    text-align: center;
+}
+
+.info-block::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: .9375rem;
+    pointer-events: none;
+    z-index: -1;
+    background: rgba(250, 171, 114, 0.6);
+    filter: blur(3.125rem);
+}
+
+.disciplines .info-block:hover {
+    transform: translateY(-0.25rem);
+}
+
+.disciplines .first-cards,
+.disciplines .second-cards {
+    animation: slideDisciplines 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes slideDisciplines {
+    from {
+        opacity: 0;
+        transform: translateY(1.25rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* МОДАЛЬНОЕ ОКНО */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 1.875rem;
+    padding: 2.5rem;
+    max-width: 50rem;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    z-index: 1002;
+    box-shadow: 0 .625rem 2.5rem rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.modal-close:hover {
+    background: rgba(0, 0, 0, 0.2);
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    gap: 1.875rem;
+    margin-bottom: 1.875rem;
+    padding-bottom: 1.25rem;
+    border-bottom: .125rem solid rgba(0, 0, 0, 0.1);
+}
+
+.modal-image {
+    width: 9.375rem;
+    height: 11.25rem;
+    border-radius: 1.25rem;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.modal-header h2 {
+    color: rgba(0, 0, 0, 1);
+    font-family: "Montserrat";
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.modal-body {
+    color: rgba(0, 0, 0, 0.8);
+    font-family: "Montserrat";
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.modal-body b {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1);
+}
+
+.teacher-description {
+    color: rgba(0, 0, 0, 0.8);
+    font-family: "Montserrat";
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.teacher-description b {
+    font-weight: 600;
+}
+
+/* УЧЕБНО МЕТОДИЧЕСКАЯ РАБОТА */
+
+.umr h3 {
+    margin-top: 5.3125rem;
+    margin-bottom: 3.125rem;
+}
+
+.umr .row img {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.umr a img {
+    width: 1.375rem;
+    height: 1.4375rem;
+}
+
+.umr .block {
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    padding: 1.25rem 0 0 1.25rem;
+    border-radius: 1.875rem;
+    box-shadow: 0rem .25rem 2rem 0rem rgba(0, 0, 0, 0.25);
+    position: relative;
+}
+
+.umr p {
+    font-size: .875rem;
+    color: black;
+}
+
+.umr .materials {
+    display: flex;
+    flex-direction: column;
+    gap: .9375rem;
+    padding: 1.25rem 3.75rem 1.25rem 0;
+    background: #fff;
+    border-radius: 1.875rem;
+    position: relative;
+    z-index: 1;
+}
+
+.umr .block::before {
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: -1.25rem;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0rem .25rem 2rem 0rem rgba(0, 0, 0, 0.25);
+    border-radius: 1.875rem;
+    transform: rotate(2deg);
+    position: absolute;
+    z-index: -2;
+}
+
+.umr .block::after {
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: -0.625rem;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0rem .25rem 2rem 0rem rgba(0, 0, 0, 0.25);
+    border-radius: 1.875rem;
+    transform: rotate(1deg);
+    position: absolute;
+    z-index: -1;
+}
+
+.umr .material {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+    padding-bottom: .9375rem;
+    border-bottom: .0625rem solid rgba(0, 0, 0, 0.4);
+    transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.umr .material:hover {
+    transform: scale(1.005);
+}
+
+.umr .material:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.umr .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: baseline;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+/* НАУЧНО ИССЛЕДОВАТЕЛЬСКАЯ РАБОТА */
+
+.nirs {
+    background: url('/background\ 3.png');
+    background-size: cover;
+    background-position: center;
+    height: 38rem;
+    margin-top: 6.25rem;
+}
+
+.nirs .content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.nirs h3 {
+    padding-top: 4.375rem;
+    margin-bottom: 2.1875rem;
+    color: white;
+}
+
+.nirs .row-2 p {
+    width: 28.875rem;
+    margin-bottom: 2.5rem;
+}
+
+.nirs .direction-and-goals {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: .9375rem .875rem .9375rem .875rem;
+    border-radius: .9375rem;
+    background: linear-gradient(159.23deg, rgba(35, 52, 55, 0.3) 70.933%, rgba(250, 171, 114, 0.2) 100%);
+    background-size: 200% 200%;
+    background-position: 100% 100%;
+    transition: background-position 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.nirs .direction-and-goals:hover {
+    background-position: 70% 70%;
+    transform: translateY(-0.5rem);
+}
+
+.nirs .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: baseline;
+    align-items: center;
+    gap: .3125rem;
+}
+
+.nirs .medium-20px {
+    color: white;
+}
+
+.nirs .column-1 {
+    display: flex;
+    flex-direction: column;
+    gap: .625rem;
+}
+
+.nirs .rows {
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    gap: .3125rem;
+}
+
+.nirs .row:nth-child(3) {
+    margin-bottom: .625rem;
+}
+
+.nirs .column-2 .medium-20px {
+    margin-bottom: .625rem;
+}
+
+.nirs .links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .9375rem;
+    height: 100%;
+    padding-top: 4.375rem;
+}
+
+.nirs .links a img {
+    height: auto;
+    display: block;
+    object-fit: contain;
+    height: 6.25rem;
+}
+
+.nirs .content-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ВНЕАУДИТОРНАЯ РАБОТА */
+
+.activities .center h3, .activities .center p {
+    text-align: center;
+    color: black;
+    margin-top: 1.5625rem;
+}
+
+.activities .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.activities .blocks {
+    margin-top: 2.5rem;
+    column-count: 2;
+    column-gap: 1.5rem;
+}
+
+.activities .block {
+    width: 100%;
+    display: inline-flex;
+    margin: 0 0 1.5rem;
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: .625rem;
+    padding: 1.0225rem .5625rem;
+    border-radius: 1.5625rem;
+    background: rgba(255, 255, 255, 0.72);
+    box-shadow: 0 .25rem 1.875rem rgba(0, 0, 0, 0.12);
+}
+
+.activities .activity-pictures {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .625rem;
+}
+
+.activities .activity-pictures.column {
+    flex-direction: column;
+    align-items: center;
+}
+
+.activities .block img {
+    display: block;
+    width: auto;
+    height: 14.0625rem;
+    object-fit: cover;
+    border-radius: 1.125rem;
+    cursor: zoom-in;
+    max-width: 100%;
+    transition: transform 250ms ease, box-shadow 250ms ease;
+}
+
+.activities .activity-pictures.column img {
+    width: auto;
+    max-width: 100%;
+}
+
+.activities .block img:hover {
+    transform: scale(1.02);
+}
+
+.activities .block p {
+    max-width: 30rem;
+    color: rgba(0, 0, 0, 0.88);
+    font-family: "Montserrat";
+    font-size: .8125rem;
+    font-weight: 400;
+    line-height: 1rem;
+    text-align: center;
+}
+
+@media (max-width: 62rem) {
+    .activities .blocks {
+        column-count: 1;
+    }
+}
+
+@media (max-width: 40rem) {
+    .activities .activity-pictures.column img,
+    .activities .block img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.activity-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+    animation: fadeIn 0.3s ease;
+}
+
+.activity-modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 1.875rem;
+    padding: 2.5rem;
+    width: 90%;
+    max-width: 50rem;
+    max-height: 80vh;
+    overflow-y: auto;
+    z-index: 1002;
+    box-shadow: 0 .625rem 2.5rem rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.activity-modal-image {
+    display: block;
+    width: 100%;
+    max-height: calc(80vh - 5rem);
+    object-fit: contain;
+    border-radius: 1.25rem;
+}
+
+.activity-modal-close {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.activity-modal-close:hover {
+    background: rgba(0, 0, 0, 0.2);
+    color: rgba(0, 0, 0, 0.8);
+}
+

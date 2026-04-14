@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Сайт ПЦК ТПП и ЕД",
-  description: "Конкурсный сайт Предметно-цикловой комиссии технологии продуктов питания и естественно-научных дисциплин. Автор: Бадегшанов Владислав Русланович",
+  title: "PZK Site",
+  description: "Competition website for the subject-cycle commission of food production technology and natural science disciplines. Author: Vladislav R. Badegshanov.",
 };
 
 export default function RootLayout({
@@ -28,7 +28,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <body>
         <div className="wrapper">
-          <header className="header">
+          <header className="header liquid-glass">
             <nav>
               <a href="#">О ПЦК</a>
               <a href="#">ПРЕПОДАВАТЕЛИ</a>
@@ -40,11 +40,9 @@ export default function RootLayout({
               <a href="#">СТУДЕНТАМ</a>
             </nav>
           </header>
-
-          <main className="main">
-            <div className="wrapper">{children}</div>
-          </main>
-
+        </div>
+        <main className="main">{children}</main>
+        <div>
           <footer className="footer">
             <div className="wrapper">
               <p>&copy; {new Date().getFullYear()} ПЦК ТПП и ЕД. Все права защищены.</p>
