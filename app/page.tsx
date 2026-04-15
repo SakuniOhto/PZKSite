@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useMemo } from 'react';
-import type { Activities as Activity, Teacher } from '@prisma/client'
+import type { Activities as Activity, Teacher, News } from '@prisma/client'
 
 const formatTeacherData = (text: string) => {
   if (!text) return null;
@@ -78,7 +78,6 @@ const formatTextFromDb = (text: string) => {
       {firstLine && <span>{firstLine}</span>}
       {firstLine && <br />}
       {firstLine && <br />}
-
       <div dangerouslySetInnerHTML={{ __html: formatted }} />
     </div>
   );
@@ -103,11 +102,8 @@ export default function Home() {
         const response = await fetch('/api/teachers');
         const data = await response.json();
         setTeachers(data);
-      } catch (error) {
-        console.log(error)
-      } finally {
-        setIsLoading(false);
-      }
+      } catch (error) { console.log(error) }
+      finally { setIsLoading(false); }
     };
     fetchTeachers();
   }, []);
@@ -118,13 +114,9 @@ export default function Home() {
         const response = await fetch('/api/activities');
         const data = await response.json();
         setActivities(data);
-      } catch (error) {
-        console.log(error);
-      } finally {
-        setIsActivitiesLoading(false);
-      }
+      } catch (error) { console.log(error); }
+      finally { setIsActivitiesLoading(false); }
     };
-
     fetchActivities();
   }, []);
 
@@ -480,7 +472,7 @@ export default function Home() {
         <>
           <div
             className="activity-modal-overlay"
-            onClick={() => setSelectedActivityImage(null)}/>
+            onClick={() => setSelectedActivityImage(null)} />
           <div className="activity-modal-content">
             <button
               className="activity-modal-close"
@@ -491,7 +483,7 @@ export default function Home() {
             <img
               src={selectedActivityImage.src}
               alt={selectedActivityImage.alt}
-              className="activity-modal-image"/>
+              className="activity-modal-image" />
           </div>
         </>
       )}
@@ -521,6 +513,17 @@ export default function Home() {
                 <p>{activity.description}</p>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+      <section className="news">
+        <div className="background"></div>
+        <div className="wrapper">
+          <h3>НОВОСТИ</h3>
+          <div className="block">
+            <img src="/news1.png" alt="Новость 1"/>
+            <h4 className="medium-20px">Университетский колледж ОГУ имени В.А. Бондаренко успешно прошёл гос. аккредитацию</h4>
+            <p className="regular-16px">С 24.11.2025 по 03.12.2025 Университетский колледж ОГУ успешно прошёл государственную аккредитацию по специальностям 19.02.11 «Технология продуктов питания из растительного сырья», 19.02.12 «Технология продуктов питания животного происхождения», набрав максимальный балл. Успех достигнут благодаря слаженной работе преподавателей и студентов.</p>
           </div>
         </div>
       </section>

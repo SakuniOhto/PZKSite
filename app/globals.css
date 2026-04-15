@@ -209,7 +209,7 @@ header {
 /* Блок О ПЦК */
 
 .aboutpzk {
-    background-image: url('../public/background\ 1.png');
+    background-image: url('/background1.png');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -618,10 +618,10 @@ header {
     position: relative;
 }
 
-.background {
+.disciplines .background {
     position: absolute;
     top: 15rem;
-    background-image: url('../public/background\ 2.png');
+    background-image: url('/background2.png');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -1049,7 +1049,7 @@ header {
 /* НАУЧНО ИССЛЕДОВАТЕЛЬСКАЯ РАБОТА */
 
 .nirs {
-    background: url('/background\ 3.png');
+    background: url('/background3.png');
     background-size: cover;
     background-position: center;
     height: 38rem;
@@ -1084,7 +1084,7 @@ header {
     background-size: 200% 200%;
     background-position: 100% 100%;
     transition: background-position 0.3s ease, transform 0.3s ease;
-    cursor: pointer;
+    cursor: pointer !important;
 }
 
 .nirs .direction-and-goals:hover {
@@ -1151,7 +1151,8 @@ header {
 
 /* ВНЕАУДИТОРНАЯ РАБОТА */
 
-.activities .center h3, .activities .center p {
+.activities .center h3,
+.activities .center p {
     text-align: center;
     color: black;
     margin-top: 1.5625rem;
@@ -1236,6 +1237,7 @@ header {
 }
 
 @media (max-width: 40rem) {
+
     .activities .activity-pictures.column img,
     .activities .block img {
         width: 100%;
@@ -1299,3 +1301,100 @@ header {
     color: rgba(0, 0, 0, 0.8);
 }
 
+/* НОВОСТИ */
+
+.news {
+    position: relative;
+}
+
+.news .background {
+    position: absolute;
+    top: 9rem;
+    background-image: url('/background4.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 35.125rem;
+}
+
+.news h3 {
+    margin-top: 3.125rem;
+}
+
+.news .block {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.news img {
+    margin-top: .625rem;
+    margin-bottom: .9375rem;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 560px;
+    height: 420px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 48px 0px rgba(61, 96, 94, 1);
+    transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.news h4 {
+    color: white;
+    text-align: center;
+    width: 560px;
+}
+
+.news p {
+    margin-top: .5rem;
+    text-align: center;
+    width: 560px;
+}
+
+.news img:hover {
+    transform: translateY(-0.3rem);
+}
+
+/* ФУТЕР */
+
+.footer {
+    margin-top: 4.0625rem;
+}
+
+.footer h4 {
+    color: rgba(0, 0, 0, 1);
+    font-family: "Montserrat";
+    font-style: SemiBold;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+.footer h5 {
+    color: rgba(0, 0, 0, 1);
+    font-family: "Montserrat";
+    font-style: Medium;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+.footer p {
+    color: rgba(0, 0, 0, 1);
+    font-family: "Montserrat";
+    font-style: Regular;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0px;
+    text-align: left;
+}

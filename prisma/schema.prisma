@@ -11,22 +11,23 @@ datasource db {
 }
 
 model Teacher {
-  id        Int      @id @default(autoincrement())
-  name      String
-  image     String?
+  id           Int      @id @default(autoincrement())
+  name         String
+  image        String?
   description  String
-  fulldesc  String @default("")
+  fulldesc     String @default("")
 }
 
 model News {
   id          Int     @id @default(autoincrement())
+  image       String?
   title       String
   description String
 }
 
 model Activities {
-  id          Int     @id @default(autoincrement())
-  description String
-  picture String
-  pictureAlign Int
+  id              Int     @id @default(autoincrement())
+  description     String
+  picture         String
+  pictureAlign    Int
 }
