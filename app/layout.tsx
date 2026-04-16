@@ -6,7 +6,7 @@ import InfoSection from "./components/InfoSection"; // <-- Измените пу
 
 export const metadata: Metadata = {
   title: "PZK Site",
-  description: "Competition website for the subject-cycle commission of food production technology and natural science disciplines. Author: Vladislav R. Badegshanov.",
+  description: "Конкурсный сайт ПЦК технологии продуктов питания и естественно-научных дисциплин. Автор: Бадегшанов В.Р.",
 };
 
 export default function RootLayout({
