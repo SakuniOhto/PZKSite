@@ -1,16 +1,8 @@
+// layout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import InfoSection from "./components/InfoSection"; // <-- Измените путь, если нужно
 
 export const metadata: Metadata = {
   title: "PZK Site",
@@ -25,42 +17,32 @@ export default function RootLayout({
   return (
     <html
       lang="ru"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+      className={`h-full antialiased`}
+    >
       <body>
         <div className="wrapper">
           <header className="header liquid-glass">
             <nav>
-              <a href="#">О ПЦК</a>
-              <a href="#">ПРЕПОДАВАТЕЛИ</a>
-              <a href="#">ДИСЦИПЛИНЫ</a>
-              <a href="#">УМР</a>
-              <a href="#">НИРС</a>
-              <a href="#">ВНЕАУДИТОРНАЯ РАБОТА</a>
-              <a href="#">НОВОСТИ</a>
-              <a href="#">СТУДЕНТАМ</a>
+              <a href="#aboutpzk">О ПЦК</a>
+              <a href="#teachers">ПРЕПОДАВАТЕЛИ</a>
+              <a href="#disciplines">ДИСЦИПЛИНЫ</a>
+              <a href="#umr">УМР</a>
+              <a href="#nirs">НИРС</a>
+              <a href="#activities">ВНЕАУДИТОРНАЯ РАБОТА</a>
+              <a href="#news">НОВОСТИ</a>
+              <a href="#students">СТУДЕНТАМ</a>
             </nav>
           </header>
         </div>
+
         <main className="main">{children}</main>
+
+
         <div>
           <footer className="footer">
             <div className="wrapper">
-              <h4>Программы обучения</h4>
-              <div className="row">
-                <div className="first-corpus">
-                  <h5>- №1 Корпус</h5>
-                  <p>Химия с нуля или новые мыслительные стратегии<br/>- Преподаватели: А.В. Куренкова, Т.В. Свистунова<br/><br/>Основы социально-экономической географии и её современные особенности<br/>- Преподаватель: Ф.Р. Хисамутдинов</p>
-                </div>
-                <div className="second-corpus">
-                  <h5>- №2 Корпус</h5>
-                  <div className="table">
-                    <p>Школа здоровья<br/>Химия окружающей среды<br/>Экологическая безопасность на предприятии<br/>Хлебные традиции: введение в профессию<br/>Профессиональное хлебопечение: опыт профессионалов</p>
-                    <div className="line"></div>
-                    <p>Преподаватель: О.С. Сазонова<br/>Преподаватель: О.С. Сазонова<br/>Преподаватель: А.В. Санкова<br/>Преподаватель: Е.С. Лукьянова<br/>Преподаватель: Е.С. Лукьянова</p>
-                  </div>
-                </div>
-              </div>
-              <p>&copy; {new Date().getFullYear()} ПЦК ТПП и ЕД. Все права защищены.</p>
+              <InfoSection />
+              <p className="copy">&copy; {new Date().getFullYear()} ПЦК ТПП и ЕД. Все права защищены.</p>
             </div>
           </footer>
         </div>

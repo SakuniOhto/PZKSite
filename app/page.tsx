@@ -93,6 +93,8 @@ export default function Home() {
   const [disciplinesPage, setDisciplinesPage] = useState(0);
   const [selectedTeacher, setSelectedTeacher] = useState<Teacher | null>(null);
   const [selectedActivityImage, setSelectedActivityImage] = useState<{ src: string; alt: string } | null>(null);
+  const [news, setNews] = useState<News[]>([]);
+  const [currentNewsIndex, setCurrentNewsIndex] = useState(0);
   const timeoutRef = React.useRef<NodeJS.Timeout | null>(null);
   const itemsPerPage = 6;
 
@@ -118,6 +120,17 @@ export default function Home() {
       finally { setIsActivitiesLoading(false); }
     };
     fetchActivities();
+  }, []);
+
+  useEffect(() => {
+    const fetchNews = async () => {
+      try {
+        const response = await fetch('/api/news');
+        const data = await response.json();
+        setNews(data);
+      } catch (error) { console.log(error); }
+    };
+    fetchNews();
   }, []);
 
   const totalPages = Math.ceil(teachers.length / itemsPerPage);
@@ -155,6 +168,22 @@ export default function Home() {
     setDisciplinesPage(1);
   };
 
+  const totalPagesNews = news.length;
+  const canGoNextNews = currentNewsIndex < totalPagesNews - 1;
+  const canGoPrevNews = currentNewsIndex > 0;
+
+  const handlePreviousNews = () => {
+    if (canGoPrevNews) {
+      setCurrentNewsIndex((prevNews) => prevNews - 1);
+    }
+  };
+
+  const handleNextNews = () => {
+    if (canGoNextNews) {
+      setCurrentNewsIndex((prevNews) => prevNews + 1);
+    }
+  };
+
   const handleCardMouseEnter = (cardId: string) => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
@@ -178,7 +207,7 @@ export default function Home() {
 
   return (
     <>
-      <section className="aboutpzk">
+      <section className="aboutpzk" id="aboutpzk">
         <div className="wrapper">
           <h1>ПРЕДМЕТНО-ЦИКЛОВАЯ КОМИССИЯ</h1>
           <div className="row">
@@ -236,7 +265,7 @@ export default function Home() {
         );
       })()}
 
-      <section className="teachers">
+      <section className="teachers" id="teachers">
         <div className="wrapper">
           <div className="row">
             <h3>ПРЕПОДАВАТЕЛИ</h3>
@@ -244,15 +273,13 @@ export default function Home() {
               <div
                 className={`button-back ${!canGoPrev ? 'disabled' : ''} ${currentPage > 0 ? 'swapped' : ''}`}
                 onClick={handlePrevious}
-                style={{ cursor: canGoPrev ? 'pointer' : 'not-allowed', opacity: canGoPrev ? 1 : 0.5 }}
-              >
+                style={{ cursor: canGoPrev ? 'pointer' : 'not-allowed', opacity: canGoPrev ? 1 : 0.5 }}>
                 <img src="/arrow.svg" alt="Стрелка" />
               </div>
               <div
                 className={`button-forward ${!canGoNext ? 'disabled' : ''} ${currentPage > 0 ? 'swapped' : ''}`}
                 onClick={handleNext}
-                style={{ cursor: canGoNext ? 'pointer' : 'not-allowed', opacity: canGoNext ? 1 : 0.5 }}
-              >
+                style={{ cursor: canGoNext ? 'pointer' : 'not-allowed', opacity: canGoNext ? 1 : 0.5 }}>
                 <img src="/arrow.svg" alt="Стрелка" />
               </div>
             </div>
@@ -286,7 +313,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="disciplines">
+      <section className="disciplines" id="disciplines">
         <div className="background"></div>
         <div className="wrapper">
           <div className="row">
@@ -387,7 +414,7 @@ export default function Home() {
           </div>}
         </div>
       </section>
-      <section className="umr">
+      <section className="umr" id="umr">
         <div className="wrapper">
           <h3>УЧЕБНО-МЕТОДИЧЕСКАЯ РАБОТА</h3>
           <div className="block">
@@ -411,7 +438,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="nirs">
+      <section className="nirs" id="nirs">
         <div className="wrapper">
           <div className="content-links">
             <div className="content">
@@ -488,7 +515,7 @@ export default function Home() {
         </>
       )}
 
-      <section className="activities">
+      <section className="activities" id="activities">
         <div className="wrapper">
           <div className="center">
             <h3>ВНЕАУДИТОРНАЯ РАБОТА</h3>
@@ -516,15 +543,38 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="news">
+      <section className="news" id="news">
         <div className="background"></div>
         <div className="wrapper">
-          <h3>НОВОСТИ</h3>
-          <div className="block">
-            <img src="/news1.png" alt="Новость 1"/>
-            <h4 className="medium-20px">Университетский колледж ОГУ имени В.А. Бондаренко успешно прошёл гос. аккредитацию</h4>
-            <p className="regular-16px">С 24.11.2025 по 03.12.2025 Университетский колледж ОГУ успешно прошёл государственную аккредитацию по специальностям 19.02.11 «Технология продуктов питания из растительного сырья», 19.02.12 «Технология продуктов питания животного происхождения», набрав максимальный балл. Успех достигнут благодаря слаженной работе преподавателей и студентов.</p>
+          <div className="row">
+            <h3>НОВОСТИ</h3>
+            <div className="buttons">
+              <div
+                className={`button-back ${!canGoPrevNews ? 'disabled' : ''} ${currentNewsIndex > 0 ? 'swapped' : ''}`}
+                onClick={handlePreviousNews}
+                style={{ cursor: canGoPrevNews ? 'pointer' : 'not-allowed', opacity: canGoPrevNews ? 1 : 0.5 }}
+              >
+                <img src="/arrow.svg" alt="Стрелка" />
+              </div>
+              <div
+                className={`button-forward ${!canGoNextNews ? 'disabled' : ''} ${currentNewsIndex > 0 ? 'swapped' : ''}`}
+                onClick={handleNextNews}
+                style={{ cursor: canGoNextNews ? 'pointer' : 'not-allowed', opacity: canGoNextNews ? 1 : 0.5 }}
+              >
+                <img src="/arrow.svg" alt="Стрелка" />
+              </div>
+            </div>
           </div>
+          {news.length > 0 && (
+            <div className="block" key={news[currentNewsIndex].id}>
+              <img
+                src={news[currentNewsIndex].image ? `/${news[currentNewsIndex].image}.png` : "/news1.png"}
+                alt="Новость"
+              />
+              <h4 className="medium-20px">{news[currentNewsIndex].title}</h4>
+              <p className="regular-16px">{news[currentNewsIndex].description}</p>
+            </div>
+          )}
         </div>
       </section>
     </>
