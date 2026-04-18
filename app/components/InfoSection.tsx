@@ -127,11 +127,6 @@ export default function InfoSection() {
           </div>
         </div>
       </div>
-
-      <div className="address-block">
-        <h4>Адрес ПЦК:</h4>
-        <p>Адрес ПЦК: г. Оренбург, ул. Терешковой, 134, каб. 2315</p>
-      </div>
     </section>
   );
 }

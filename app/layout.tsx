@@ -1,8 +1,6 @@
 // layout.tsx
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import type { Metadata } from "next";;
 import "./globals.css";
-import InfoSection from "./components/InfoSection"; // <-- Измените путь, если нужно
 
 export const metadata: Metadata = {
   title: "PZK Site",
@@ -37,12 +35,13 @@ export default function RootLayout({
 
         <main className="main">{children}</main>
 
-
         <div>
           <footer className="footer">
             <div className="wrapper">
-              <InfoSection />
-              <p className="copy">&copy; {new Date().getFullYear()} ПЦК ТПП и ЕД. Все права защищены.</p>
+              <div className="address-block">
+                <h4>Адрес ПЦК</h4>
+                <p>г. Оренбург, ул. Терешковой, 134, каб. 2315<br /><span>&copy; {new Date().getFullYear()} ПЦК ТПП и ЕД. Все права защищены.</span></p>
+              </div>
             </div>
           </footer>
         </div>
