@@ -440,14 +440,14 @@ export default function Home() {
                   <img src="/pdf.png" alt="PDF" />
                   <p className="regular-16px">Егорова В.Н., Колотова О.М., Организация практических работ по дисциплине «География» [Электронный ресурс]</p>
                 </div>
-                <a href="http://artlib.osu.ru/web/books/metod_all/214260_20241017.pdf"><img src="/download.png" alt="Скачать" /></a>
+                <a href="http://artlib.osu.ru/web/books/metod_all/214260_20241017.pdf" target="_blank"><img src="/download.png" alt="Скачать" /></a>
               </div>
               <div className="material">
                 <div className="row">
                   <img src="/pdf.png" alt="PDF" />
                   <p className="regular-16px">Сидорова О.С., Биология [Электронный ресурс]</p>
                 </div>
-                <a href="http://artlib.osu.ru/web/books/metod_all/221410_20250327.pdf"><img src="/download.png" alt="Скачать" /></a>
+                <a href="http://artlib.osu.ru/web/books/metod_all/221410_20250327.pdf" target="_blank"><img src="/download.png" alt="Скачать" /></a>
               </div>
             </div>
           </div>
@@ -594,7 +594,7 @@ export default function Home() {
       </section>
       <section className="students" id='students'>
         <div className="wrapper">
-          <h3>СТУДЕНТАМ</h3>
+          <h3 id='main'>СТУДЕНТАМ</h3>
           <div className="grid">
             <div className="column">
               <h2 className="first-title">Программы обучения</h2>
