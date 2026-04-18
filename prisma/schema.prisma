@@ -6,8 +6,8 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = env("DATABASE_URL")
+  provider = "posgresql" // sqlite
+  url      = env("NEON_URL") // DATABASE_URL
 }
 
 model Teacher {
