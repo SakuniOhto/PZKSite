@@ -5,7 +5,7 @@ import "./globals.css";
 
 
 export const metadata: Metadata = {
-  title: "PZK Site",
+  title: "Сайт ПЦК ТПП и ЕД, УК ОГУ",
   description: "Конкурсный сайт ПЦК технологии продуктов питания и естественно-научных дисциплин. Автор: Бадегшанов В.Р.",
 };
 
