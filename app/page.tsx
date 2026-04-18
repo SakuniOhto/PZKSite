@@ -597,7 +597,7 @@ export default function Home() {
           <h3 id='main'>СТУДЕНТАМ</h3>
           <div className="grid">
             <div className="column">
-              <h2 className="first-title">Программы обучения</h2>
+              <h2 className="first-title">Программы доп. образования</h2>
 
               {/* Корпус 1 */}
               <div className="building-block">
