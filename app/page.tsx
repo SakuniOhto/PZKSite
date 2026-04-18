@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useMemo } from 'react';
 import type { Activities as Activity, Teacher, News } from '@prisma/client'
-import InfoSection from "./components/InfoSection"; // <-- Измените путь, если нужно
+
 
 const formatTeacherData = (text: string) => {
   if (!text) return null;
@@ -102,6 +102,8 @@ export default function Home() {
   const timeoutRef = React.useRef<NodeJS.Timeout | null>(null);
   const itemsPerPage = 6;
 
+
+
   useEffect(() => {
     const fetchTeachers = async () => {
       try {
@@ -173,6 +175,8 @@ export default function Home() {
   };
 
   const totalPagesNews = news.length;
+
+
   const canGoNextNews = currentNewsIndex < totalPagesNews - 1;
   const canGoPrevNews = currentNewsIndex > 0;
 
@@ -318,6 +322,8 @@ export default function Home() {
         </div>
       </section>
       <section className="disciplines" id="disciplines">
+
+
         <div className="background"></div>
         <div className="wrapper">
           <div className="row">
@@ -341,6 +347,8 @@ export default function Home() {
             </div>
           </div>
           {disciplinesPage === 0 && <div className="first-cards" key="disciplines-0">
+
+
             <div className={`cards ${activeCard ? `active-${activeCard}` : ''}`}>
               <div className="row-cards">
                 <div
@@ -368,8 +376,7 @@ export default function Home() {
                   <p className="regular-16px">Социальная и экономическая география.</p>
                 </div>
               </div>
-              <div className="row-cards">
-                <div className="card liquid-glass"></div>
+              <div className="row-cards row-cards-single">
                 <div
                   className="card liquid-glass"
                   onMouseEnter={() => handleCardMouseEnter('2-2')}
@@ -378,11 +385,13 @@ export default function Home() {
                   <div className="medium-20px">Экологические основы природопользования</div>
                   <p className="regular-16px">Экосистемы, ресурсы, устойчивое развитие.</p>
                 </div>
-                <div className="card liquid-glass"></div>
               </div>
+
             </div>
           </div>}
           {disciplinesPage === 1 && <div className="second-cards" key="disciplines-1">
+
+
             <div className="title-cards">
               <div className="first-title-cards">
                 <div className="title-card liquid-glass">
@@ -415,7 +424,9 @@ export default function Home() {
               </div>
             </div>
             <div className="info-block liquid-glass"><p>В этом блоке собраны дисциплины по технологии продуктов питания, которые изучают на пищевом производстве. Сюда входят как общие предметы вроде процессов и микробиологии, так и узкие курсы по работе с хлебом, кондитеркой и молочным сырьем. Основной упор сделан на техническую часть: как устроены автоматизированные линии и как правильно организовать работу цеха. Проще говоря, это база знаний о том, по каким принципам работают современные заводы и на каком «железе» делают продукты. Весь материал выстроен логично — от основ санитарии до управления сложными техническими комплексами.</p></div>
+
           </div>}
+
         </div>
       </section>
       <section className="umr" id="umr">

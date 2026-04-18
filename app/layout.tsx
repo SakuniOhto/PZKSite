@@ -1,6 +1,8 @@
 // layout.tsx
-import type { Metadata } from "next";;
+import type { Metadata } from "next";
+import MobileHeader from "./components/MobileHeader";
 import "./globals.css";
+
 
 export const metadata: Metadata = {
   title: "PZK Site",
@@ -19,19 +21,9 @@ export default function RootLayout({
     >
       <body>
         <div className="wrapper">
-          <header className="header liquid-glass">
-            <nav>
-              <a href="#aboutpzk">О ПЦК</a>
-              <a href="#teachers">ПРЕПОДАВАТЕЛИ</a>
-              <a href="#disciplines">ДИСЦИПЛИНЫ</a>
-              <a href="#umr">УМР</a>
-              <a href="#nirs">НИРС</a>
-              <a href="#activities">ВНЕАУДИТОРНАЯ РАБОТА</a>
-              <a href="#news">НОВОСТИ</a>
-              <a href="#students">СТУДЕНТАМ</a>
-            </nav>
-          </header>
+          <MobileHeader />
         </div>
+
 
         <main className="main">{children}</main>
 
