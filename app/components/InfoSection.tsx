@@ -4,7 +4,6 @@
 import React, { useState } from "react";
 
 export default function InfoSection() {
-  // По умолчанию всё скрыто (false)
   const [isCorp1Open, setIsCorp1Open] = useState(false);
   const [isCorp2Open, setIsCorp2Open] = useState(false);
   const [isScheduleOpen, setIsScheduleOpen] = useState(false);

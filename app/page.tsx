@@ -294,7 +294,7 @@ export default function Home() {
                   <div className="teacher-card-blur-bg-green"></div>)}
                 <div className={`card ${currentPage === 0 && index === 1 ? 'card-green liquid-glass' : 'liquid-glass'}`}>
                   <div className="row">
-                    <img src={encodeURI(teacher.image ? `/${teacher.image}.png` : "/Egorova.png")} alt={teacher.name} />
+                    <img src={encodeURI(teacher.image ? `/${teacher.image}.png` : "/Default.png")} alt={teacher.name} />
                     <h1>
                       {teacher.name.split(' ').map((word: string, i: number) => (
                         <React.Fragment key={i}>
